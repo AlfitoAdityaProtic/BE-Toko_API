@@ -49,9 +49,9 @@ class MemberController extends ResourceController
         $this->model->insert($data);
 
         return $this->respondCreated([
-            'message' => 'Data Member berhasil ditambahkan',
+            'message' => 'Registrasi Berhasil',
             'data' => $data
-        ]);
+        ],200);
     }
     public function update($id = null)
     {
@@ -78,7 +78,7 @@ class MemberController extends ResourceController
         $this->model->update($id, $data);
 
         return $this->respond([
-            'message' => 'Data Member berhasil diupdate',
+            'message' => 'Data Login berhasil diupdate',
             'data' => $data
         ]);
     }

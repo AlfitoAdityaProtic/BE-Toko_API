@@ -9,5 +9,5 @@ use CodeIgniter\Router\RouteCollection;
 $routes->get('/', 'Home::index');
 
 $routes->resource('produk', ['controller' => 'ProdukController']);
-$routes->resource('member', ['controller' => 'MemberController']);
-$routes->resource('memberToken', ['controller' => 'MemberTokenController']);
+$routes->resource('register', ['controller' => 'MemberController']);
+$routes->resource('login', ['controller' => 'MemberTokenController::login']);
