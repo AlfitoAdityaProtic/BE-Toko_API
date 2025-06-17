@@ -31,12 +31,13 @@ class MemberTokenController extends ResourceController
         ]);
 
         return $this->respond([
-            'status' => true,
+            'status' => 'success',
             'status_code' => 200,
             'message' => 'Login berhasil',
             'token' => $auth_key,
-            'user' => [
+            'data' => [
                 'id' => $member['id'],
+                'nama'=> $member['nama'],
                 'email' => $member['email']
             ]
         ],200);

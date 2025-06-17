@@ -13,7 +13,8 @@ class MemberController extends ResourceController
     {
         $data = $this->model->findAll();
         return $this->respond([
-            'message' => 'success',
+            'status' => 'success',
+            'message' => 'Selamat, Anda Berhasil Registrasi!!!',
             'data' => $data
         ], 200);
     }
@@ -49,7 +50,8 @@ class MemberController extends ResourceController
         $this->model->insert($data);
 
         return $this->respondCreated([
-            'message' => 'Registrasi Berhasil',
+            'status' => 'success',
+            'message' => 'Selamat, Anda Berhasil Registrasi!!!',
             'data' => $data
         ],200);
     }

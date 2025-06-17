@@ -8,6 +8,8 @@ use CodeIgniter\Router\RouteCollection;
  */
 $routes->get('/', 'Home::index');
 
-$routes->resource('produk', ['controller' => 'ProdukController']);
 $routes->resource('register', ['controller' => 'MemberController']);
 $routes->resource('login', ['controller' => 'MemberTokenController::login']);
+$routes->resource('produk', ['controller' => 'ProdukController']);
+
+$routes->options('(:any)', 'CorsController::options');
