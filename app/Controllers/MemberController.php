@@ -49,9 +49,10 @@ class MemberController extends ResourceController
         ];
         $this->model->insert($data);
 
-        return $this->respondCreated([
-            'status' => 'success',
-            'message' => 'Selamat, Anda Berhasil Registrasi!!!',
+        return $this->respond([
+            'code' => 200,
+            'status' => true,
+            'message' => 'Selamat, Anda Berhasil Registrasi',
             'data' => $data
         ],200);
     }

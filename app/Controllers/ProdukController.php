@@ -45,6 +45,7 @@ class ProdukController extends ResourceController
         $this->model->insert($data);
 
         return $this->respondCreated([
+            'status' => 'success',
             'message' => 'Data Produk berhasil ditambahkan',
             'data' => $data
         ]);
@@ -55,7 +56,7 @@ class ProdukController extends ResourceController
         if (!$produk) {
             return $this->failNotFound('Data Produk tidak ditemukan');
         }
-
+        $data = $this->request->getJSON(true);
         $rules = [
             'kode_produk'  => 'required|string',
             'nama_produk' => 'required|string',
@@ -66,7 +67,6 @@ class ProdukController extends ResourceController
             return $this->failValidationErrors($this->validator->getErrors());
         }
 
-        $data = $this->request->getJSON(true);
         $this->model->update($id, $data);
 
         return $this->respond([
